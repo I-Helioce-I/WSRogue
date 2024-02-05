@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        inputActions = new CustomInput();
+        inputActions = new Controller();
         rb = GetComponent<Rigidbody>();
         
     }
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inputActions.Enable();
         inputActions.Player.Jump.started += DoJump;
-        _move = inputActions.Player.Movement;
+        
         inputActions.Player.Enable();
     }
 
@@ -45,31 +45,31 @@ public class PlayerMovement : MonoBehaviour
         horizontalVelocity.y = 0;
         if (horizontalVelocity.sqrMagnitude > maxSpeed * maxSpeed)
         {
-            _rb.velocity = horizontalVelocity.normalized * maxSpeed + Vector3.up * _rb.velocity.y;
+            rb.velocity = horizontalVelocity.normalized * maxSpeed + Vector3.up * rb.velocity.y;
         }
         
     }
 
     private void OnDisable()
     {
-        _input.Disable();
-        _input.Player.Jump.started += DoJump; // Checker si c'est pas -= plutot que +=
-        _input.Player.Interact.canceled -= OnInteract;
-        _move = _input.Player.Movement;
-        _input.Player.Disable();
+        inputActions.Disable();
+        inputActions.Player.Jump.started += DoJump; // Checker si c'est pas -= plutot que +=
+        //inputActions.Player.Interact.canceled -= OnInteract;
+        
+        inputActions.Player.Disable();
     }
 
     private void DoJump(InputAction.CallbackContext obj)
     {
         if (IsGrounded())
         {
-            _forceDirection += Vector3.up * _jumpForce;
+            transform.position += Vector3.up * jumpForce;
         }
     }
 
     private void OnInteract(InputAction.CallbackContext obj)
     {
-        DebugText("F Pour interact");
+
     }
 
     private bool IsGrounded()

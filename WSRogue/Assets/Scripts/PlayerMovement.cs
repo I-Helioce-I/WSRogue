@@ -1,90 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Components
     PlayerController pC;
     Controller inputActions;
-    Rigidbody rb;
+    Rigidbody rb = null;
 
-    // Values
-    [Header("Stats")]
-    [SerializeField] float speed;
-    [SerializeField] float jumpForce;
+
+    [Header("Movement")]
+    [SerializeField] float moveSpeed = 5f;
+    float horizontalMovement;
     float maxSpeed;
+
+    [Header("Jump")]
+    [SerializeField] float jumpForce = 10f;
+    [SerializeField] private int maxJumps = 2;
+    int jumpsRemaining;
+
 
     private void Awake()
     {
         inputActions = new Controller();
+        pC = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody>();
-        
-    }
-
-    private void OnEnable()
-    {
-        inputActions.Enable();
-        inputActions.Player.Jump.started += DoJump;
-        
-        inputActions.Player.Enable();
     }
 
     private void FixedUpdate()
     {
-        
-
-        if (rb.velocity.y < 0f)
-        {
-            rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
-        }
-
-        Vector3 horizontalVelocity = rb.velocity;
-        horizontalVelocity.y = 0;
-        if (horizontalVelocity.sqrMagnitude > maxSpeed * maxSpeed)
-        {
-            rb.velocity = horizontalVelocity.normalized * maxSpeed + Vector3.up * rb.velocity.y;
-        }
-        
+        rb.velocity = new Vector3(horizontalMovement * moveSpeed, rb.velocity.y);
+        IsGrounded();
     }
 
-    private void OnDisable()
+    public void Move(InputAction.CallbackContext value)
     {
-        inputActions.Disable();
-        inputActions.Player.Jump.started += DoJump; // Checker si c'est pas -= plutot que +=
-        //inputActions.Player.Interact.canceled -= OnInteract;
-        
-        inputActions.Player.Disable();
+        horizontalMovement = value.ReadValue<Vector2>().x;
+
     }
 
-    private void DoJump(InputAction.CallbackContext obj)
+    public void Jump(InputAction.CallbackContext value)
     {
-        if (IsGrounded())
+        if (jumpsRemaining > 0)
         {
-            transform.position += Vector3.up * jumpForce;
+
+            if (value.performed)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpsRemaining--;
+            }
+            else if (value.canceled) // la c'est plus tu reste appuyé plus ça saute haut / retiré le else if si on veux pas
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
         }
     }
 
-    private void OnInteract(InputAction.CallbackContext obj)
-    {
-
-    }
-
-    private bool IsGrounded()
+    private void IsGrounded()
     {
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);
         if (Physics.Raycast(ray, out RaycastHit hit, 0.3f))
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            jumpsRemaining = maxJumps;
+            
         }
     }
-
-
-
 }

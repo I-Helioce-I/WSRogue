@@ -45,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
+
+        Debug.Log(mousePosition);
     }
 
     private void FixedUpdate()
@@ -86,6 +89,9 @@ public class PlayerMovement : MonoBehaviour
             canDash = false;
         }
     }
+
+
+    
 
     private void IsGrounded()
     {

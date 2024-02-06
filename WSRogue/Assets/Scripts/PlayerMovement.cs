@@ -1,4 +1,5 @@
 using Cinemachine.Utility;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,11 +11,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb = null;
     Animator animator = null;
 
-
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
+    float defaultMoveSpeed;
     float horizontalMovement;
     float maxSpeed;
+    float backwardSpeed;
 
     [Header("Jump")]
     [SerializeField] float jumpForce = 10f;
@@ -22,15 +24,16 @@ public class PlayerMovement : MonoBehaviour
     int jumpsRemaining;
 
     [Header("Dash")]
-    bool canDash;
-    bool isDashing;
     [SerializeField] float dashingPower = 20f;
     [SerializeField] float dashingCooldown = 10f;
     public float timerDash;
+    bool canDash;
+    bool isDashing;
 
     [Header("Aim")]
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject caspule;
+    bool isFacingRight;
 
     private void Awake()
     {
@@ -39,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         canDash = true;
+        defaultMoveSpeed = moveSpeed;
         Cursor.lockState = CursorLockMode.Confined;
     }
     private void Update()
@@ -52,23 +56,60 @@ public class PlayerMovement : MonoBehaviour
                 canDash = true;
             }
         }
-        
-        animator.SetFloat("Speed",Mathf.Abs(rb.velocity.x));
+        Debug.Log(isFacingRight + " " + horizontalMovement + " " + rb.velocity.x);
+        WalkAnimation();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(horizontalMovement * moveSpeed, rb.velocity.y);
+        SpeedControl();
+        rb.velocity = new Vector3(horizontalMovement * (moveSpeed / backwardSpeed), rb.velocity.y);
+
         IsGrounded();
     }
 
     public void Move(InputAction.CallbackContext value)
     {
-        horizontalMovement = value.ReadValue<Vector2>().x;
+        horizontalMovement = value.ReadValue<Vector2>().y;
+    }
 
-        
+    //Ce qui ralentit le backward
+    private void SpeedControl()
+    {
+        if (isFacingRight)
+        {
+            if ((horizontalMovement < 0))
+            {
+                backwardSpeed = 2;
+            }
+            else
+            {
+                backwardSpeed = 1;
+            }
+        }
+        else
+        {
+            if (horizontalMovement > 0)
+            {
+                backwardSpeed = 2;
+            }
+            else
+            {
+                backwardSpeed = 1;
+            }
+        }
+    }
 
-
+    private void WalkAnimation()
+    {
+        if (isFacingRight)
+        {
+            animator.SetFloat("Speed", rb.velocity.x);
+        }
+        else
+        {
+            animator.SetFloat("Speed", -rb.velocity.x);
+        }
     }
 
     public void Jump(InputAction.CallbackContext value)
@@ -98,19 +139,28 @@ public class PlayerMovement : MonoBehaviour
             canDash = false;
         }
     }
-    
+
     public void Aim(InputAction.CallbackContext value)
     {
-        Vector3 mousePosition = value.ReadValue<Vector2>();
+        if (value.performed)
+        {
 
-        Debug.Log(mousePosition.x + "   " + Screen.width / 2);
-        if (mousePosition.x < Screen.width / 2)
-        {
-            caspule.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, -90, transform.rotation.z));
+            Vector3 mousePosition = value.ReadValue<Vector2>();
+            crosshair.transform.position = mousePosition;
+            if (mousePosition.x < Screen.width / 2)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, -90, transform.rotation.z));
+                isFacingRight = false;
+            }
+            else if (mousePosition.x > Screen.width / 2)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 90, transform.rotation.z));
+                isFacingRight = true;
+            }
         }
-        else if (mousePosition.x > Screen.width / 2)
+        else if (value.canceled)
         {
-            caspule.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 90, transform.rotation.z));
+            return;
         }
     }
 

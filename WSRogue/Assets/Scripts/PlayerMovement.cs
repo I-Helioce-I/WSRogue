@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -45,9 +46,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        Vector2 mousePosition = Mouse.current.position.ReadValue();
-
-        Debug.Log(mousePosition);
+        MousePosition();
     }
 
     private void FixedUpdate()
@@ -90,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void MousePosition()
+    {
+        
+    }
 
     
 

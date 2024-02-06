@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerController pC;
     Controller inputActions;
     Rigidbody rb = null;
+    Animator animator = null;
 
 
     [Header("Movement")]
@@ -27,12 +28,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float dashingCooldown = 10f;
     public float timerDash;
 
+    [Header("Aim")]
+    [SerializeField] GameObject crosshair;
+    [SerializeField] GameObject caspule;
+
     private void Awake()
     {
         inputActions = new Controller();
         pC = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
         canDash = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     private void Update()
     {
@@ -45,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
                 canDash = true;
             }
         }
-
-        MousePosition();
+        
+        animator.SetFloat("Speed",Mathf.Abs(rb.velocity.x));
     }
 
     private void FixedUpdate()
@@ -58,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext value)
     {
         horizontalMovement = value.ReadValue<Vector2>().x;
+
+        
+
 
     }
 
@@ -82,19 +92,30 @@ public class PlayerMovement : MonoBehaviour
     {
         if (value.performed && canDash)
         {
-
-            rb.AddForce(new Vector3(horizontalMovement,0) * dashingPower, ForceMode.Impulse);
+            animator.Play("Dash");
+            rb.AddForce(new Vector3(horizontalMovement, 0) * dashingPower, ForceMode.Impulse);
             timerDash = dashingCooldown;
             canDash = false;
         }
     }
-
-    public void MousePosition()
+    
+    public void Aim(InputAction.CallbackContext value)
     {
-        
+        Vector3 mousePosition = value.ReadValue<Vector2>();
+
+        Debug.Log(mousePosition.x + "   " + Screen.width / 2);
+        if (mousePosition.x < Screen.width / 2)
+        {
+            caspule.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, -90, transform.rotation.z));
+        }
+        else if (mousePosition.x > Screen.width / 2)
+        {
+            caspule.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 90, transform.rotation.z));
+        }
     }
 
-    
+
+
 
     private void IsGrounded()
     {

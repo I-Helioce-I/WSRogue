@@ -1537,18 +1537,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1690015866 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6439173380028722619, guid: 5416bbfca5ac116488c46ad76ed2868d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7929824078346683747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a0a205ab9a59e94aa8ddba357282e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1690015867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4474900418321311363, guid: 5416bbfca5ac116488c46ad76ed2868d,
@@ -1932,66 +1920,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
-      value: 493a6025-63c5-40a0-b12a-3698cc543896
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
-      value: e01b0ff6-34f1-431e-bfa7-63969cd46059
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
-      value: Player/Attack[/Mouse/leftButton]
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
-      value: Player/Die[/Keyboard/semicolon]
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1690015866}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Die
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846664408324808008, guid: 5416bbfca5ac116488c46ad76ed2868d,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7009684789656125084, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}

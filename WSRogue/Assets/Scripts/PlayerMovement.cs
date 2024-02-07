@@ -64,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
         rb.velocity = new Vector3(horizontalMovement * (moveSpeed / backwardSpeed), rb.velocity.y);
         WalkAnimation();
-
         IsGrounded();
     }
 
@@ -116,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpsRemaining > 0)
         {
+            animator.SetBool("IsGrounded", false);
 
             if (value.performed)
             {
@@ -126,6 +126,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
+            
+            
         }
     }
 
@@ -172,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 0.3f))
         {
             jumpsRemaining = maxJumps;
+            animator.SetBool("IsGrounded", true);
 
         }
     }

@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShopInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] CinemachineVirtualCamera shopCamera;
+    bool isOpen = false;
+
     public string GetInteractText()
     {
         return "Shop";
@@ -19,7 +21,14 @@ public class ShopInteractable : MonoBehaviour, IInteractable
 
     public void Interact(PlayerInteract playerInteract)
     {
-        OpenShop();
+        if (isOpen)
+        {
+            CloseShop();
+        }
+        else
+        {
+            OpenShop();
+        }
     }
 
     private void OpenShop()

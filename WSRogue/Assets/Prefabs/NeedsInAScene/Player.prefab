@@ -202,6 +202,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 602fd545-35bd-4a4a-9038-25ed1d907260
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 493a6025-63c5-40a0-b12a-3698cc543896
+    m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6439173380028722619}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e01b0ff6-34f1-431e-bfa7-63969cd46059
+    m_ActionName: Player/Die[/Keyboard/semicolon]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

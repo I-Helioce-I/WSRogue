@@ -146,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Vector3 mousePosition = value.ReadValue<Vector2>();
-            crosshair.transform.position = mousePosition;
             if (mousePosition.x < Screen.width / 2)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, -90, transform.rotation.z));

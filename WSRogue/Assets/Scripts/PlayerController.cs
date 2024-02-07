@@ -8,15 +8,22 @@ public class PlayerController : MonoBehaviour
 {
     // Components
     PlayerMovement pM;
+    PlayerInteract pI;
+    Animator animator;
+    CombatSystem combatSystem;
 
     [Header("Stats")]
     private float currentHealth;
     private float maxHealth;
+    bool isDead = false;
 
 
     private void Awake()
     {
         pM = GetComponent<PlayerMovement>();
+        pI = GetComponent<PlayerInteract>();
+        animator = GetComponentInChildren<Animator>();
+        combatSystem = GetComponent<CombatSystem>();
         currentHealth = maxHealth;
     }
 
@@ -24,17 +31,21 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damageIn;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            Die();
+
         }
     }
 
 
 
-    private void Die()
+    public void Die(InputAction.CallbackContext context)
     {
-        // ADD stuff to die
+        if (context.performed)
+        {
+            isDead = true;
+            animator.SetBool("IsDead", isDead);
+        }
 
     }
 }

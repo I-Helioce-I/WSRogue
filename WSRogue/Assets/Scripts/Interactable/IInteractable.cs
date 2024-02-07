@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public interface IInteractable
+{
+    public void Interact(PlayerInteract playerInteract);
+
+    public Transform GetTransform();
+
+    public string GetInteractText();
+}

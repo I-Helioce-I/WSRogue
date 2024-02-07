@@ -57,13 +57,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         Debug.Log(isFacingRight + " " + horizontalMovement + " " + rb.velocity.x);
-        WalkAnimation();
     }
 
     private void FixedUpdate()
     {
         SpeedControl();
         rb.velocity = new Vector3(horizontalMovement * (moveSpeed / backwardSpeed), rb.velocity.y);
+        WalkAnimation();
 
         IsGrounded();
     }

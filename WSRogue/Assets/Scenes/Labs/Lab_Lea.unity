@@ -260,12 +260,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!4 &18017093 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8723237005847906146, guid: 5416bbfca5ac116488c46ad76ed2868d,
-    type: 3}
-  m_PrefabInstance: {fileID: 706820101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115635141
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,10 +378,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2074797082733584270, guid: 5416bbfca5ac116488c46ad76ed2868d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896303681078463777, guid: 5416bbfca5ac116488c46ad76ed2868d,
+        type: 3}
+      propertyPath: m_SkinnedMotionVectors
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
@@ -402,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
@@ -412,7 +416,7 @@ PrefabInstance:
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
@@ -427,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
@@ -447,11 +451,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8723237005847906146, guid: 5416bbfca5ac116488c46ad76ed2868d,
+    - targetCorrespondingSourceObject: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1354774852}
-    - targetCorrespondingSourceObject: {fileID: 8723237005847906146, guid: 5416bbfca5ac116488c46ad76ed2868d,
+    - targetCorrespondingSourceObject: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 893604212}
@@ -539,13 +543,13 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -0, y: 89.99999, z: -0}
+      - m_Value: {x: -0, y: 0, z: -0}
         m_Name: Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 1.107, y: 1, z: 0}
+      - m_Value: {x: 2.23, y: 2.14, z: 0}
         m_Name: Transform_position
         m_Overridden: 1
-      - m_Value: {x: 1, y: 1, z: 1}
+      - m_Value: {x: 1, y: 1, z: 0}
         m_Name: Transform_scale
         m_Overridden: 1
     m_Vector4f:
@@ -573,11 +577,11 @@ Transform:
   m_GameObject: {fileID: 893604209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.12, z: -0.41}
+  m_LocalPosition: {x: 0, y: -0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 18017093}
+  m_Father: {fileID: 1703549230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &893604213
 MonoBehaviour:
@@ -593,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property:
     m_Name: Transform
-  Target: {fileID: 18017093}
+  Target: {fileID: 0}
 --- !u!114 &893604214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 18017093}
+  m_Father: {fileID: 1703549230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &1354774853
 TrailRenderer:
@@ -873,6 +877,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!4 &1703549230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8324667790101881009, guid: 5416bbfca5ac116488c46ad76ed2868d,
+    type: 3}
+  m_PrefabInstance: {fileID: 706820101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

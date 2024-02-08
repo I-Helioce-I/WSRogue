@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bf6364ea6a26144ca8b055c166b0bc7
+guid: b713379e1c2bb7949b8a381c22dbefa0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,19 +33,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: DoubleJump
+      name: FallingIdle
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 2
-      lastFrame: 27.7
+      firstFrame: 0
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1

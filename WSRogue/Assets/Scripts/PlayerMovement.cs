@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 10f;
     [SerializeField] private int maxJumps = 2;
     int jumpsRemaining;
+    bool isJumping;
+    bool isGrounded;
 
     [Header("Dash")]
     [SerializeField] float dashingPower = 20f;
@@ -56,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
                 canDash = true;
             }
         }
-        Debug.Log(isFacingRight + " " + horizontalMovement + " " + rb.velocity.x);
     }
 
     private void FixedUpdate()
@@ -115,10 +116,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpsRemaining > 0)
         {
-            animator.SetBool("IsGrounded", false);
+
 
             if (value.performed)
             {
+                if (!isJumping)
+                {
+                    animator.SetTrigger("IsJumping");
+                    Debug.Log("Trigger");
+                }
+                isJumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpsRemaining--;
             }
@@ -126,8 +133,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
-            
-            
+
+
         }
     }
 
@@ -173,9 +180,16 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);
         if (Physics.Raycast(ray, out RaycastHit hit, 0.3f))
         {
+
             jumpsRemaining = maxJumps;
             animator.SetBool("IsGrounded", true);
-
+            animator.SetBool("IsFalling", false);
+            isJumping = false;
+        }
+        else
+        {
+            animator.SetBool("IsFalling", true);
+            animator.SetBool("IsGrounded", false);
         }
     }
 }

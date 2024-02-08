@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             isDead = true;
             animator.SetBool("IsDead", isDead);
+            pM.enabled = false;
         }
 
     }

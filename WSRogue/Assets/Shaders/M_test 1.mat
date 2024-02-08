@@ -66,8 +66,8 @@ Material:
     - _Emmissive: 0
     - _Metallic_strenght: 1
     - _Normal_Intensity: 1
-    - _Outline_Spread: 3.76
-    - _Outline_gradient: 3.43
+    - _Outline_Spread: 13.25
+    - _Outline_gradient: 42.04
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Roughness_Intensity: 1

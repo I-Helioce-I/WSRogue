@@ -57,14 +57,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         Debug.Log(isFacingRight + " " + horizontalMovement + " " + rb.velocity.x);
-        WalkAnimation();
     }
 
     private void FixedUpdate()
     {
         SpeedControl();
         rb.velocity = new Vector3(horizontalMovement * (moveSpeed / backwardSpeed), rb.velocity.y);
-
+        WalkAnimation();
         IsGrounded();
     }
 
@@ -116,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpsRemaining > 0)
         {
+            animator.SetBool("IsGrounded", false);
 
             if (value.performed)
             {
@@ -126,6 +126,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
+            
+            
         }
     }
 
@@ -146,7 +148,6 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Vector3 mousePosition = value.ReadValue<Vector2>();
-            crosshair.transform.position = mousePosition;
             if (mousePosition.x < Screen.width / 2)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, -90, transform.rotation.z));
@@ -173,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 0.3f))
         {
             jumpsRemaining = maxJumps;
+            animator.SetBool("IsGrounded", true);
 
         }
     }

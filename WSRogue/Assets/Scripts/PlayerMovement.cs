@@ -172,9 +172,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
-
     private void IsGrounded()
     {
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);

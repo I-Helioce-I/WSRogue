@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 8
   maxJumps: 1
   dashingPower: 150
   dashingCooldown: 0.25

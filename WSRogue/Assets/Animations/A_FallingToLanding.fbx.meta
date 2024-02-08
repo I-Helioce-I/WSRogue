@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bf6364ea6a26144ca8b055c166b0bc7
+guid: a718a4456c8fba749809af2ba26c8c5c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: DoubleJump
+      name: FallingToLanding
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 2
-      lastFrame: 27.7
+      firstFrame: 8
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

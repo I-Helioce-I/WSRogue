@@ -14,6 +14,6 @@ public enum RoomType
 
 public class Room : MonoBehaviour
 {
-
-    
+    [SerializeField] List<Door> doors = new List<Door>();
+    [SerializeField] RoomType roomType;
 }

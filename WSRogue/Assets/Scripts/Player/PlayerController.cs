@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float currentHealth;
     private float maxHealth;
     bool isDead = false;
+    [SerializeField]SkinnedMeshRenderer mat;
 
 
     private void Awake()
@@ -25,6 +27,14 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         combatSystem = GetComponent<CombatSystem>();
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        if (isDead)
+        {
+            
+        }
     }
 
     public void TakeDamage(float damageIn)
@@ -46,6 +56,14 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             animator.SetBool("IsDead", isDead);
             pM.enabled = false;
+            
+            mat.material.SetFloat("_Anime", Mathf.Lerp(-1.5f, 1, 3));
+
+
+        }
+        else if (context.canceled)
+        {
+            return;
         }
 
     }

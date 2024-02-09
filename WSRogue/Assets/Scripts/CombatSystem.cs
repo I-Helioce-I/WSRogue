@@ -20,21 +20,25 @@ public class CombatSystem : MonoBehaviour
     private void Start()
     {
         pC = GetComponent<PlayerController>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        switch (currentCombo)
+        if (context.performed)
         {
-            case ComboState.First:
-                animator.SetTrigger("IsAttacking");
-                break;
-            case ComboState.Second:
-                break;
-            case ComboState.Third:
-                break;
-            default:
-                break;
+
+            switch (currentCombo)
+            {
+                case ComboState.First:
+                    animator.SetTrigger("IsAttacking");
+                    break;
+                case ComboState.Second:
+                    break;
+                case ComboState.Third:
+                    break;
+                default:
+                    break;
+            }
         }
 
     }

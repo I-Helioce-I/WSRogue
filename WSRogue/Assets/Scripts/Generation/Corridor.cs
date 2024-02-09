@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public enum RoomType
+public enum CorridorType
 {
-    Arena,
-    Shop,
-    Fountain,
-    Boss
-
+    Horizontal,
+    Vertical
 }
 
-public class Room : MonoBehaviour
+public class Corridor : MonoBehaviour
 {
+    [SerializeField] CorridorType actualCorridor;
     [SerializeField] List<Door> doors = new List<Door>();
-    [SerializeField] RoomType roomType;
+
+
 }

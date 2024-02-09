@@ -45,7 +45,6 @@ public class LevelGenerator : MonoBehaviour
             // Get a randomdoor
             
 
-
         }
         // Select a Door
 

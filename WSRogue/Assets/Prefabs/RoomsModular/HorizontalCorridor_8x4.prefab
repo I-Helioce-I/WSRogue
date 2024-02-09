@@ -721,8 +721,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoor: {fileID: 0}
   currentPosition: 2
+  currentDoorType: 0
   isOpen: 0
   isADoor: 0
+  relativeWall: {fileID: 0}
+  doorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
 --- !u!1 &1273892340527505007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,8 +1448,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoor: {fileID: 0}
   currentPosition: 0
+  currentDoorType: 0
   isOpen: 0
   isADoor: 0
+  relativeWall: {fileID: 0}
+  doorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
 --- !u!1 &2020226550541951020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,8 +3940,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoor: {fileID: 0}
   currentPosition: 0
+  currentDoorType: 0
   isOpen: 0
   isADoor: 0
+  relativeWall: {fileID: 0}
+  doorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
 --- !u!1 &4775819513672473496
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,8 +5726,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoor: {fileID: 0}
   currentPosition: 3
+  currentDoorType: 0
   isOpen: 0
   isADoor: 0
+  relativeWall: {fileID: 0}
+  doorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
 --- !u!1 &8198606756510739304
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,8 +6525,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoor: {fileID: 0}
   currentPosition: 1
+  currentDoorType: 0
   isOpen: 0
   isADoor: 0
+  relativeWall: {fileID: 0}
+  doorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
 --- !u!1 &8957835321504089464
 GameObject:
   m_ObjectHideFlags: 0
@@ -6879,8 +6899,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoor: {fileID: 0}
   currentPosition: 2
+  currentDoorType: 0
   isOpen: 0
   isADoor: 0
+  relativeWall: {fileID: 0}
+  doorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
 --- !u!1 &9035369052961947188
 GameObject:
   m_ObjectHideFlags: 0

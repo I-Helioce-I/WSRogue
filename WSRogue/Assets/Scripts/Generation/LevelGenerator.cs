@@ -13,6 +13,9 @@ public enum DoorPosition
 
 public class LevelGenerator : MonoBehaviour
 {
+    [Header("GenerationRules")]
+    [SerializeField] int maxRoomNumber = 5;
+
     // Corridors
     [SerializeField] Corridor[] corridorsTypes;
     [SerializeField] List<Corridor> inGameCorridors = new List<Corridor>();
@@ -21,22 +24,57 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] Room[] roomsTypes;
     [SerializeField] List<Room> inGameRooms = new List<Room>();
 
-    [SerializeField] 
+    [SerializeField] GameObject currentInstantiation;
 
 
     private void Awake()
     {
-        Corridor currentCorridor = Instantiate(GetRandomCorridor(), transform);
-        currentCorridor.transform.position = Vector3.zero;
-        inGameCorridors.Add(currentCorridor);
+        CreateARoom(0);
+
     }
 
     private void Start()
     {
-        
+
     }
 
-    
+    private void InstantiateLevel()
+    {
+        for (int i = 0; i < maxRoomNumber; i++)
+        {
+            // Get a randomdoor
+            
+
+
+        }
+        // Select a Door
+
+        // Change the door by a door
+        // Create 
+    }
+
+    private void CreateARoom(int ifSpecificRoom)
+    {
+        int roomToCreate;
+        if (ifSpecificRoom >= 0)
+        {
+            roomToCreate = ifSpecificRoom;
+        }
+        else
+        {
+            roomToCreate = Random.Range(0, roomsTypes.Length);
+        }
+
+        currentInstantiation = Instantiate(roomsTypes[roomToCreate], transform).gameObject;
+        currentInstantiation.transform.position = transform.position;
+
+    }
+
+    private void CreateACorridor()
+    {
+
+    }
+
 
     private Corridor GetRandomCorridor()
     {

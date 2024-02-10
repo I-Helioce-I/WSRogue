@@ -41,6 +41,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
-    - _distortion: -0.25
+    - _U: 1.35
+    - _distortion: -0.59
+    - _fresnel_dissolve: 6.2
+    - _fresnel_edge: 0.39
+    - _fresnel_power: 0.7
+    - _smoothness: 0.59
+    - _speed: -0.3
+    - _texture_scale: 19.66
+    - _wobble_strengh: 8.59
+    - _wtf: 0.12
     m_Colors: []
   m_BuildTextureStacks: []

@@ -61,8 +61,8 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _fresnel_edge: 1.22
-    - _fresnel_intensity: 2.91
-    - _texture_mask: 23.02
+    - _fresnel_edge: 0.45
+    - _fresnel_intensity: 1.05
+    - _texture_mask: 21.82
     m_Colors: []
   m_BuildTextureStacks: []

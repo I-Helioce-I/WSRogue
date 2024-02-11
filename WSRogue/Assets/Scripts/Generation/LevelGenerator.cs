@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum DoorPosition
@@ -50,6 +51,11 @@ public class LevelGenerator : MonoBehaviour
 
         // Change the door by a door
         // Create 
+    }
+
+    private void GetRandomDoor()
+    {
+
     }
 
     private void CreateARoom(int ifSpecificRoom)

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8021287404950182714
+--- !u!114 &-2670468206117742325
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,10 +20,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Hoorgam
-  m_Shader: {fileID: -6465566751694194690, guid: 995b8a3d94ea35b47b40201214163377,
+  m_Name: Black_Material
+  m_Shader: {fileID: -6465566751694194690, guid: 96481d2bfb4bdfb4f9103d6cb8e973a1,
     type: 3}
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: -876546973899608171, guid: 96481d2bfb4bdfb4f9103d6cb8e973a1,
+    type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -36,30 +37,19 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Division01: 47
-    - _Division02: 31.6
-    - _Gradient: 1.68
-    - _Opacity: 8.67
-    - _Position: -0.1
     - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Speed01: -50
-    - _Speed02: 4
-    m_Colors:
-    - _Color: {r: 0.3436276, g: 0.735849, b: 0.60901564, a: 0}
+    - _U: 1.35
+    - _distortion: -0.59
+    - _fresnel_dissolve: 6.2
+    - _fresnel_edge: 0.39
+    - _fresnel_power: 0.7
+    - _smoothness: 0.59
+    - _speed: -0.3
+    - _texture_scale: 19.66
+    - _wobble_strengh: 8.59
+    - _wtf: 0.12
+    m_Colors: []
   m_BuildTextureStacks: []

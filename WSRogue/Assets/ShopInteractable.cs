@@ -7,10 +7,11 @@ public class ShopInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] CinemachineVirtualCamera shopCamera;
     bool isOpen = false;
+    [SerializeField] string text;
 
     public string GetInteractText()
     {
-        return "Shop";
+        return text;
     }
 
     public Transform GetTransform()

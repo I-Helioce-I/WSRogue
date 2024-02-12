@@ -47,6 +47,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Heal(float healIn)
+    {
+        currentHealth += healIn;
+
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
 
 
     public void Die(InputAction.CallbackContext context)

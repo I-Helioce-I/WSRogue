@@ -56,7 +56,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void GetRandomDoor()
     {
-        DoorPosition doorPosition = (DoorPosition)Random.RandomRange(0, (int)DoorPosition.Length);
+        DoorPosition doorPosition = (DoorPosition)Random.Range(0, (int)DoorPosition.Length);
     }
 
     private void CreateARoom(int ifSpecificRoom)

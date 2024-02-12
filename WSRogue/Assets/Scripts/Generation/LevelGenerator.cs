@@ -8,7 +8,8 @@ public enum DoorPosition
     Top,
     Left,
     Down,
-    Right
+    Right,
+    Length
 }
 
 
@@ -55,7 +56,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void GetRandomDoor()
     {
-
+        DoorPosition doorPosition = (DoorPosition)Random.RandomRange(0, (int)DoorPosition.Length);
     }
 
     private void CreateARoom(int ifSpecificRoom)

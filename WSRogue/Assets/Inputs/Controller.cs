@@ -89,6 +89,15 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""aee829d9-24f0-4fbf-98c5-02b98442a80b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -245,6 +254,17 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""action"": ""Die"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bab1d164-fdc6-4934-8ee7-0f4257abbeba"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -260,6 +280,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Die = m_Player.FindAction("Die", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -328,6 +349,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Die;
+    private readonly InputAction m_Player_Shoot;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -339,6 +361,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Die => m_Wrapper.m_Player_Die;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -369,6 +392,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Die.started += instance.OnDie;
             @Die.performed += instance.OnDie;
             @Die.canceled += instance.OnDie;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -394,6 +420,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Die.started -= instance.OnDie;
             @Die.performed -= instance.OnDie;
             @Die.canceled -= instance.OnDie;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -420,5 +449,6 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnDie(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }

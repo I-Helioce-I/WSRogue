@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Search;
@@ -16,6 +17,7 @@ public class ProjectileMovement : MonoBehaviour
     }
 
     [SerializeField] Direction currentDirection;
+    public Vector3 direction = Vector3.right;
     [SerializeField] float speed;
     [SerializeField] Projectile projectilComponent;
     Rigidbody rb;
@@ -26,8 +28,9 @@ public class ProjectileMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.forward * speed, ForceMode.Impulse);
+        rb.AddForce(direction * speed, ForceMode.Impulse);
     }
 }

@@ -22,7 +22,7 @@ public class CombatSystem : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] public float damage;
-    [SerializeField]
+    [SerializeField] List<EnemyController> enemyControllers;
 
     public enum WeaponState
     {
@@ -37,6 +37,7 @@ public class CombatSystem : MonoBehaviour
     {
         pC = GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
+        enemyControllers = new List<EnemyController>();
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -47,8 +48,8 @@ public class CombatSystem : MonoBehaviour
             {
                 case ComboState.First:
                     animator.SetInteger("CurrentCombo", 1);
-                    Attack();
                     animator.SetTrigger("IsAttacking");
+                    Attack();
                     currentCombo = ComboState.Second;
                     break;
                 case ComboState.Second:
@@ -65,15 +66,16 @@ public class CombatSystem : MonoBehaviour
                     break;
             }
 
-
         }
     }
 
     private void Attack()
     {
-        attackCollider.gameObject.SetActive(true);
-        Debug.Log(attackCollider.enabled);
-        attackCollider.gameObject.SetActive(false);
+        foreach (EnemyController enemy in enemyControllers)
+        {
+            Debug.Log("Attack");
+            enemy.TakeDamage(damage);
+        }
     }
 
 
@@ -82,7 +84,17 @@ public class CombatSystem : MonoBehaviour
     {
         if (other.TryGetComponent<EnemyController>(out EnemyController enemyController))
         {
-            enemyController.TakeDamage(damage);
+            enemyControllers.Add(enemyController);
+
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent<EnemyController>(out EnemyController enemyController))
+        {
+            enemyControllers.Remove(enemyController);
 
         }
     }

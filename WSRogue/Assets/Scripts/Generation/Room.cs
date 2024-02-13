@@ -22,10 +22,13 @@ public class Room : MonoBehaviour
     [SerializeField] Door oppositeDoor;
     [SerializeField] Vector3 size;
 
-    public Door GetRandomDoor(List<int> doorToIgnore)
+    public Door GetRandomDoor(int doorToIgnore)
     {
         List<Door> doorPossible = new List<Door>();
         DoorPosition doorPosition = (DoorPosition)Random.Range(0, (int)DoorPosition.Length-1);
+
+        
+
 
         foreach (Door door in doors)
         {
@@ -36,8 +39,6 @@ public class Room : MonoBehaviour
         }
 
         int doorSelected = Random.Range(0, doorPossible.Count);
-        Debug.Log(doorSelected + doorPossible.Count);
-        Debug.Log(doorPosition);
         return doorPossible[doorSelected];
     }
     

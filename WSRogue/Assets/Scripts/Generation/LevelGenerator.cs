@@ -67,7 +67,7 @@ public class LevelGenerator : MonoBehaviour
         {
             roomToCreate = Random.Range(0, roomsTypes.Length);
         }
-        Door previousDoor = previousInstantiation.GetRandomDoor(null);
+        Door previousDoor = previousInstantiation.GetRandomDoor(-1);
         Door nextDoor;
 
         currentInstantiation = Instantiate(GetRandomCorridor(), transform);
@@ -81,14 +81,14 @@ public class LevelGenerator : MonoBehaviour
 
         previousInstantiation.RemoveInList(previousDoor);
         currentInstantiation.RemoveInList(nextDoor);
+        
         Destroy(previousDoor.gameObject);
         Destroy(nextDoor.gameObject);
     }
 
     private void CreateACorridor()
     {
-        bool goodRoom = false;
-        Door previousDoor = previousInstantiation.GetRandomDoor(null);
+        Door previousDoor = previousInstantiation.GetRandomDoor(-1);
         Door nextDoor;
 
         currentInstantiation = Instantiate(GetRandomCorridor(), transform);
@@ -99,6 +99,9 @@ public class LevelGenerator : MonoBehaviour
 
         currentInstantiation.transform.position = previousDoor.transform.position;
         currentInstantiation.transform.position -= offset;
+
+        previousInstantiation.RemoveInList(previousDoor);
+        currentInstantiation.RemoveInList(nextDoor);
 
         Destroy(previousDoor.gameObject);
         Destroy(nextDoor.gameObject);

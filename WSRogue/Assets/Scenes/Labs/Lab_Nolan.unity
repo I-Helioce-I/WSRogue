@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d8151953526b440abfa44c9c116754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRoomNumber: 1
+  maxRoomNumber: 6
   corridorsTypes:
   - {fileID: 6875215568404369391, guid: 89850574ad550d243ac7d54790cf6744, type: 3}
   - {fileID: 8547606850132287343, guid: 3297efdb71b6cac48bc02b1c2eaf636c, type: 3}
@@ -1255,12 +1255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce64abbcdfa82c489e4c7453eeee70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1849519476 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7203858013984036196, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 8197203396338257618}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1872566435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 748337782176450963, guid: 5416bbfca5ac116488c46ad76ed2868d,
@@ -1799,7 +1793,7 @@ PrefabInstance:
         type: 3}
       propertyPath: crosshair
       value: 
-      objectReference: {fileID: 1849519476}
+      objectReference: {fileID: 0}
     - target: {fileID: 7009684789656125084, guid: 5416bbfca5ac116488c46ad76ed2868d,
         type: 3}
       propertyPath: originShoot
@@ -1885,6 +1879,16 @@ PrefabInstance:
       propertyPath: playerInteract
       value: 
       objectReference: {fileID: 1690015867}
+    - target: {fileID: 2790422824200221177, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2790422824200221177, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5366098313977356477, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
         type: 3}
       propertyPath: m_Camera
@@ -1894,11 +1898,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239136453803480711, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7771637884790819917, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
         type: 3}

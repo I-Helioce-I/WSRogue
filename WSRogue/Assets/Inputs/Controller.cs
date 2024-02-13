@@ -82,18 +82,18 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Die"",
+                    ""name"": ""Shoot"",
                     ""type"": ""Button"",
-                    ""id"": ""e01b0ff6-34f1-431e-bfa7-63969cd46059"",
+                    ""id"": ""aee829d9-24f0-4fbf-98c5-02b98442a80b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""Die"",
                     ""type"": ""Button"",
-                    ""id"": ""aee829d9-24f0-4fbf-98c5-02b98442a80b"",
+                    ""id"": ""e01b0ff6-34f1-431e-bfa7-63969cd46059"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -246,23 +246,23 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1e87aa8e-dc5b-41f7-85c3-b6058c64dcbb"",
-                    ""path"": ""<Keyboard>/semicolon"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Die"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""bab1d164-fdc6-4934-8ee7-0f4257abbeba"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e87aa8e-dc5b-41f7-85c3-b6058c64dcbb"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Die"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -279,8 +279,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_Die = m_Player.FindAction("Die", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Die = m_Player.FindAction("Die", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -348,8 +348,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_Die;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Die;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -360,8 +360,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
-        public InputAction @Die => m_Wrapper.m_Player_Die;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @Die => m_Wrapper.m_Player_Die;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -389,12 +389,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
-            @Die.started += instance.OnDie;
-            @Die.performed += instance.OnDie;
-            @Die.canceled += instance.OnDie;
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Die.started += instance.OnDie;
+            @Die.performed += instance.OnDie;
+            @Die.canceled += instance.OnDie;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -417,12 +417,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
-            @Die.started -= instance.OnDie;
-            @Die.performed -= instance.OnDie;
-            @Die.canceled -= instance.OnDie;
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Die.started -= instance.OnDie;
+            @Die.performed -= instance.OnDie;
+            @Die.canceled -= instance.OnDie;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -448,7 +448,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-        void OnDie(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnDie(InputAction.CallbackContext context);
     }
 }

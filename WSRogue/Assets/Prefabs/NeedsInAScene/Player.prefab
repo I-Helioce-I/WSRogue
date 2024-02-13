@@ -162,12 +162,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8324667790101881009}
-  - component: {fileID: 6439173380028722619}
-  - component: {fileID: 7009684789656125084}
   - component: {fileID: 6906380847046620220}
   - component: {fileID: 3846664408324808008}
-  - component: {fileID: 4474900418321311363}
+  - component: {fileID: 6439173380028722619}
+  - component: {fileID: 7009684789656125084}
   - component: {fileID: 884925441060087508}
+  - component: {fileID: 4474900418321311363}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -193,39 +193,6 @@ Transform:
   - {fileID: 868279916744563876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6439173380028722619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748337782176450963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a0a205ab9a59e94aa8ddba357282e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mat: {fileID: 4896303681078463777}
---- !u!114 &7009684789656125084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748337782176450963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4257baabb5e424ab8d8f7ecfc84cb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 8
-  maxJumps: 1
-  dashingPower: 150
-  dashingCooldown: 0.25
-  timerDash: 4
-  crosshair: {fileID: 0}
-  caspule: {fileID: 1902480101678712203}
 --- !u!54 &6906380847046620220
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -391,12 +358,16 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e01b0ff6-34f1-431e-bfa7-63969cd46059
     m_ActionName: Player/Die[/Keyboard/semicolon]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aee829d9-24f0-4fbf-98c5-02b98442a80b
+    m_ActionName: Player/Shoot[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4474900418321311363
+--- !u!114 &6439173380028722619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,9 +376,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 748337782176450963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce64abbcdfa82c489e4c7453eeee70f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a0a205ab9a59e94aa8ddba357282e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 4896303681078463777}
+--- !u!114 &7009684789656125084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748337782176450963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4257baabb5e424ab8d8f7ecfc84cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 8
+  maxJumps: 1
+  dashingPower: 150
+  dashingCooldown: 0.25
+  timerDash: 4
+  crosshair: {fileID: 0}
+  caspule: {fileID: 1902480101678712203}
 --- !u!114 &884925441060087508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +413,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCombo: 0
+--- !u!114 &4474900418321311363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748337782176450963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce64abbcdfa82c489e4c7453eeee70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4395388845738337338
 GameObject:
   m_ObjectHideFlags: 0

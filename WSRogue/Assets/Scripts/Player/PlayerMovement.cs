@@ -1,5 +1,6 @@
 using Cinemachine.Utility;
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,7 +36,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Aim")]
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject caspule;
-    bool isFacingRight;
+    public bool isFacingRight;
+    [SerializeField] GameObject originShoot;
 
     private void Awake()
     {
@@ -165,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 90, transform.rotation.z));
                 isFacingRight = true;
             }
+
         }
         else if (value.canceled)
         {

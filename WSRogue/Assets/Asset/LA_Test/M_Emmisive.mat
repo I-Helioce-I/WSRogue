@@ -163,7 +163,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Custom_Emmisive: {r: 0.04680889, g: 0.062411856, b: 0.059890512, a: 0}
+    - _Custom_Emmisive: {r: 2.055644, g: 4.7881465, b: 4.111288, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flat_Color: {r: 0, g: 0.58882093, b: 1, a: 0}
     - _Outline_Tint: {r: 1, g: 1, b: 1, a: 0}

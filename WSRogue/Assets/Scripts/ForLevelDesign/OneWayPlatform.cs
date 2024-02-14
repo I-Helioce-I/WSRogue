@@ -20,7 +20,7 @@ public class OneWayPlatform : MonoBehaviour
         get => isCheckingCollision;
         set => isCheckingCollision = value;
     }
-
+    
     private void Awake()
     {
         collision = gameObject.GetComponentInChildren<MeshCollider>();
@@ -31,7 +31,6 @@ public class OneWayPlatform : MonoBehaviour
     {
         if (isCheckingCollision)
         {
-
             if (player != null)
             {
                 // var playerPosY = get Player position.y
@@ -39,8 +38,6 @@ public class OneWayPlatform : MonoBehaviour
                 //check playerPosY par rapport a la positon de la platform ( world position Y ) 
                 // Si supérieur => Activer collisions
                 // Else desactiver
-
-
 
                 if (playerPosY >= gameObject.transform.position.y)
                 {

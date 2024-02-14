@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum DoorPosition
@@ -7,7 +8,8 @@ public enum DoorPosition
     Top,
     Left,
     Down,
-    Right
+    Right,
+    Length
 }
 
 
@@ -17,41 +19,42 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] int maxRoomNumber = 5;
 
     // Corridors
-    [SerializeField] Corridor[] corridorsTypes;
-    [SerializeField] List<Corridor> inGameCorridors = new List<Corridor>();
+    [Header("Corridor")]
+    [SerializeField] Room[] corridorsTypes;
+    [SerializeField] List<Room> inGameCorridors = new List<Room>();
 
     //Rooms
+    [Header("Room")]
     [SerializeField] Room[] roomsTypes;
     [SerializeField] List<Room> inGameRooms = new List<Room>();
 
-    [SerializeField] GameObject currentInstantiation;
-
+    [SerializeField] Room previousInstantiation;
+    [SerializeField] Room currentInstantiation;
 
     private void Awake()
     {
-        CreateARoom(0);
-
+        InstantiateLevel();
     }
-
-    private void Start()
-    {
-
-    }
-
     private void InstantiateLevel()
     {
-        for (int i = 0; i < maxRoomNumber; i++)
+
+        currentInstantiation = Instantiate(roomsTypes[0], transform);
+        currentInstantiation.transform.position = transform.position;
+        previousInstantiation = currentInstantiation;
+
+        for (int r = 0; r < maxRoomNumber; r++)
         {
-            // Get a randomdoor
-            
-
-
+            int numberOfCorridor = Random.Range(1, 5);
+            for (int c = 0; c < numberOfCorridor; c++)
+            {
+                CreateACorridor();
+                previousInstantiation = currentInstantiation;
+            }
+            CreateARoom(0);
+            previousInstantiation = currentInstantiation;
         }
-        // Select a Door
-
-        // Change the door by a door
-        // Create 
     }
+
 
     private void CreateARoom(int ifSpecificRoom)
     {
@@ -64,19 +67,47 @@ public class LevelGenerator : MonoBehaviour
         {
             roomToCreate = Random.Range(0, roomsTypes.Length);
         }
+        Door previousDoor = previousInstantiation.GetRandomDoor(-1);
+        Door nextDoor;
 
-        currentInstantiation = Instantiate(roomsTypes[roomToCreate], transform).gameObject;
-        currentInstantiation.transform.position = transform.position;
+        currentInstantiation = Instantiate(GetRandomCorridor(), transform);
 
+        nextDoor = currentInstantiation.GetOppositeDoor(previousDoor.GetActualPosition());
+
+        Vector3 offset = nextDoor.transform.localPosition;
+
+        currentInstantiation.transform.position = previousDoor.transform.position;
+        currentInstantiation.transform.position -= offset;
+
+        previousInstantiation.RemoveInList(previousDoor);
+        currentInstantiation.RemoveInList(nextDoor);
+        
+        Destroy(previousDoor.gameObject);
+        Destroy(nextDoor.gameObject);
     }
 
     private void CreateACorridor()
     {
+        Door previousDoor = previousInstantiation.GetRandomDoor(-1);
+        Door nextDoor;
 
+        currentInstantiation = Instantiate(GetRandomCorridor(), transform);
+        
+        nextDoor = currentInstantiation.GetOppositeDoor(previousDoor.GetActualPosition());
+
+        Vector3 offset = nextDoor.transform.localPosition;
+
+        currentInstantiation.transform.position = previousDoor.transform.position;
+        currentInstantiation.transform.position -= offset;
+
+        previousInstantiation.RemoveInList(previousDoor);
+        currentInstantiation.RemoveInList(nextDoor);
+
+        Destroy(previousDoor.gameObject);
+        Destroy(nextDoor.gameObject);
     }
 
-
-    private Corridor GetRandomCorridor()
+    private Room GetRandomCorridor()
     {
         int randomInt = Random.Range(0, corridorsTypes.Length);
 

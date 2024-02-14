@@ -19,8 +19,8 @@ public class EnemyController : MonoBehaviour
     [Header("Stats")]
     float currentHealth;
     [SerializeField] float maxHealth;
-    [SerializeField] bool canTakeMelee;
-    [SerializeField] bool canTakeShoot;
+    [SerializeField] public bool canTakeMelee;
+    [SerializeField] public bool canTakeShoot;
     [SerializeField] GameObject origin;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float damage;

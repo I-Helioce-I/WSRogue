@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -50526,6 +50526,7 @@ MonoBehaviour:
   origin: {fileID: 581996016}
   bulletPrefab: {fileID: 4566155087273722092, guid: 0447c6fccfe742f42950da061634aa2c,
     type: 3}
+  damage: 0
   playerController: {fileID: 0}
   coolDown: 2
 --- !u!65 &1453315899
@@ -76798,16 +76799,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1387533099}
-    - target: {fileID: 5366098313977356477, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5366098313977356477, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 5858563817582304587, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
         type: 3}
       propertyPath: m_Name

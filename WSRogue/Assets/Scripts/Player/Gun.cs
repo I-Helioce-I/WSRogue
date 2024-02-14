@@ -50,17 +50,17 @@ public class Gun : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, origin.transform.position, origin.transform.rotation);
         if (pM.isFacingRight)
         {
-
+            bullet.GetComponent<ProjectileMovement>().Damage = 10;
             bullet.GetComponent<ProjectileMovement>().direction = Vector3.right;
         }
         else
         {
-
+            bullet.GetComponent<ProjectileMovement>().Damage = 10;
             bullet.GetComponent<ProjectileMovement>().direction = Vector3.left;
         }
     }
 
-    private void Update() 
+    private void Update()
     {
         if (currentAmmo > 0 && !canShoot)
         {

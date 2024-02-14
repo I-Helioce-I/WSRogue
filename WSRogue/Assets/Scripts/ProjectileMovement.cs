@@ -21,17 +21,20 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] Projectile projectilComponent;
     Rigidbody rb;
+    float damage;
+
+    public float Damage { get { return damage; } set {  damage = value; } }
 
     private void Awake()
     {
         projectilComponent = GetComponent<Projectile>();
         rb = GetComponent<Rigidbody>();
+        Destroy(gameObject, 2);
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
-        transform.Translate(transform.forward);
-        //rb.AddForce(direction * speed, ForceMode.Impulse);
+        transform.Translate(Vector3.forward* speed * Time.deltaTime);
     }
 }

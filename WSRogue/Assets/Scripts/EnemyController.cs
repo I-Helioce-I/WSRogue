@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] bool canTakeShoot;
     [SerializeField] GameObject origin;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float damage;
 
     [SerializeField] PlayerController playerController;
 
@@ -74,10 +75,10 @@ public class EnemyController : MonoBehaviour
     }
 
     private void Shoot()
-    {
-        if (timer <= 0)
+    {        if (timer <= 0)
         {
-            GameObject bulletInstance = Instantiate(bulletPrefab, origin.transform.position, transform.localRotation);
+            GameObject bulletInstance = Instantiate(bulletPrefab, origin.transform.position, origin.transform.rotation);
+            bulletInstance.GetComponent<ProjectileMovement>().Damage = damage;
             timer = coolDown;
         }
 

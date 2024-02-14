@@ -31,7 +31,7 @@ public class ProjectileMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-        rb.AddForce(direction * speed, ForceMode.Impulse);
+        transform.Translate(transform.forward);
+        //rb.AddForce(direction * speed, ForceMode.Impulse);
     }
 }

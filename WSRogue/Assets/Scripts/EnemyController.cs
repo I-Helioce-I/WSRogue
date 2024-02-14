@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public enum EnemyType
 {
@@ -18,13 +19,22 @@ public class EnemyController : MonoBehaviour
     [Header("Stats")]
     float currentHealth;
     [SerializeField] float maxHealth;
+    [SerializeField] bool canTakeMelee;
+    [SerializeField] bool canTakeShoot;
+    [SerializeField] GameObject origin;
+    [SerializeField] GameObject bulletPrefab;
 
     [SerializeField] PlayerController playerController;
+
+    float timer;
+    [SerializeField] float coolDown = 2f;
+
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody>();
         currentHealth = maxHealth;
+        timer = coolDown;
     }
 
     public void TakeDamage(float damageIn)
@@ -45,7 +55,7 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if(playerController != null)
+        if (playerController != null)
         {
             switch (enemyType)
             {
@@ -54,6 +64,8 @@ public class EnemyController : MonoBehaviour
                 case EnemyType.Flying:
                     break;
                 case EnemyType.Turret:
+                    origin.transform.LookAt(playerController.transform.position);
+                    Shoot();
                     break;
                 default:
                     break;
@@ -61,9 +73,28 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void Shoot()
+    {
+        if (timer <= 0)
+        {
+            GameObject bulletInstance = Instantiate(bulletPrefab, origin.transform.position, transform.localRotation);
+            timer = coolDown;
+        }
+
+        timer -= Time.deltaTime;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<PlayerController>(out PlayerController player))
+        if (other.gameObject.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
+        {
+            playerController = player;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
         {
             playerController = player;
         }

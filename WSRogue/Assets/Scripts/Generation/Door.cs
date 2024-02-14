@@ -22,15 +22,15 @@ public class Door : MonoBehaviour
     [SerializeField] GameObject doorPrefab;
     [SerializeField] GameObject wallPrefab;
     
-    public DoorPosition ActualDoorPosition { get; private set; }
-
-
+    public DoorPosition GetActualPosition()
+    {
+        return currentPosition;
+    }
 
     private void Awake()
     {
         thisDoor = this;
         CheckDoorAndWall();
-
     }
 
     private void CheckDoorAndWall()
@@ -50,5 +50,4 @@ public class Door : MonoBehaviour
                 break;
         }
     }
-
 }

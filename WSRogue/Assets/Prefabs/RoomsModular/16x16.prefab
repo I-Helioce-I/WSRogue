@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa79f9ba16c1710448cd1b5349606d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 748337782176450963, guid: 5416bbfca5ac116488c46ad76ed2868d, type: 3}
   nullLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -4332,7 +4332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa79f9ba16c1710448cd1b5349606d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 748337782176450963, guid: 5416bbfca5ac116488c46ad76ed2868d, type: 3}
   nullLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -8714,7 +8714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa79f9ba16c1710448cd1b5349606d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 748337782176450963, guid: 5416bbfca5ac116488c46ad76ed2868d, type: 3}
   nullLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -9087,10 +9087,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa79f9ba16c1710448cd1b5349606d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 748337782176450963, guid: 5416bbfca5ac116488c46ad76ed2868d, type: 3}
   nullLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14989,7 +14989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa79f9ba16c1710448cd1b5349606d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 748337782176450963, guid: 5416bbfca5ac116488c46ad76ed2868d, type: 3}
   nullLayer:
     serializedVersion: 2
     m_Bits: 0

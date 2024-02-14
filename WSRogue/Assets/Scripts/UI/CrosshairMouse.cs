@@ -21,6 +21,6 @@ public class CrosshairMouse : MonoBehaviour
     void Update()
     {
         screenPosition = Mouse.current.position.ReadValue();
-        crosshair.GetComponent<RectTransform>().anchoredPosition = screenPosition + offset;
+        crosshair.GetComponent<RectTransform>().anchoredPosition = screenPosition;
     }
 }

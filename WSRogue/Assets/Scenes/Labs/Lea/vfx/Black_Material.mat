@@ -25,7 +25,7 @@ Material:
     type: 3}
   m_Parent: {fileID: -876546973899608171, guid: 96481d2bfb4bdfb4f9103d6cb8e973a1,
     type: 3}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 8
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -46,10 +46,10 @@ Material:
     - _fresnel_dissolve: 6.2
     - _fresnel_edge: 0.39
     - _fresnel_power: 0.7
-    - _smoothness: 0.59
-    - _speed: -0.3
+    - _smoothness: 0.53
+    - _speed: 0.25
     - _texture_scale: 19.66
-    - _wobble_strengh: 8.59
-    - _wtf: 0.12
+    - _wobble_strengh: 1.57
+    - _wtf: 0.03
     m_Colors: []
   m_BuildTextureStacks: []

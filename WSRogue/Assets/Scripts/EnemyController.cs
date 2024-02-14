@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour
     float currentHealth;
     [SerializeField] float maxHealth;
 
+    [SerializeField] PlayerController playerController;
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -41,7 +43,30 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+    private void Update()
+    {
+        if(playerController != null)
+        {
+            switch (enemyType)
+            {
+                case EnemyType.Grounded:
+                    break;
+                case EnemyType.Flying:
+                    break;
+                case EnemyType.Turret:
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<PlayerController>(out PlayerController player))
+        {
+            playerController = player;
+        }
+    }
 
 }

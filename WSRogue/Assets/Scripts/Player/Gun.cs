@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Update() 
     {
         if (currentAmmo > 0 && !canShoot)
         {

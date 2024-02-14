@@ -635,7 +635,7 @@ Transform:
   m_GameObject: {fileID: 5314475228695142757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5527137e-15, y: 1.5, z: 0.7500001}
+  m_LocalPosition: {x: 0.24999964, y: 1.5, z: 0.7499999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1295,7 +1295,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902480101678712203}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 676ff30034fdb764bbc703cc882fb119, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

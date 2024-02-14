@@ -9,6 +9,7 @@ public class CrosshairMouse : MonoBehaviour
     [SerializeField] public Vector3 screenPosition;
     public Image crosshair;
     public Vector3 offset;
+    public float offsetZ;
     public new Camera camera;
 
     private void Awake()

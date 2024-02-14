@@ -80438,26 +80438,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 369671019645273736, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 369671019645273736, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 589528928249323235, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
         type: 3}
       propertyPath: playerInteract
       value: 
       objectReference: {fileID: 1690015867}
+    - target: {fileID: 3612938384162745947, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
+        type: 3}
+      propertyPath: m_FillClockwise
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5366098313977356477, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1387533099}
-    - target: {fileID: 5366098313977356477, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5366098313977356477, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 5858563817582304587, guid: d6359eadf45488f4c8ca9ecd0a0da5bb,
         type: 3}
       propertyPath: m_Name

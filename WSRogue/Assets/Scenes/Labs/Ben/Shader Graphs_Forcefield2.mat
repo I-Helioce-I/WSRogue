@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2493638132020947841
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Forcefield_2
-  m_Shader: {fileID: -6465566751694194690, guid: 6c0e582dba7d65142864cbdb6aa03e01,
+  m_Name: Shader Graphs_Forcefield2
+  m_Shader: {fileID: -6465566751694194690, guid: 8ad4a7b890fcf3544b95fde1b0d06913,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texture:
-        m_Texture: {fileID: 2800000, guid: 9e48c83f295ca9440a49f9240358bf70, type: 3}
+        m_Texture: {fileID: 2800000, guid: ec5a0201271039644a43ff43ad0dfbe9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -63,12 +50,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ColorIntensity: 1
+    - _Float: 8.93
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _fresnel_edge: 0.94
-    - _fresnel_intensity: 7.6
-    - _speed1: 0.05
-    - _speed2: 0.1
-    - _texture_mask: 5.1
-    m_Colors: []
+    - _fresnel_intensity: 13.7
+    - _speed1: 0.13
+    - _speed2: 0.2
+    - _texture_mask: 5
+    m_Colors:
+    - _Color: {r: 0.25907797, g: 0.6811084, b: 0.7735849, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &2502616919126840054
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

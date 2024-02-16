@@ -39,6 +39,7 @@ public class Room : MonoBehaviour
         }
 
         int doorSelected = Random.Range(0, doorPossible.Count);
+        doors.Remove(doorPossible[doorSelected]);
         return doorPossible[doorSelected];
     }
     
@@ -79,6 +80,7 @@ public class Room : MonoBehaviour
 
         Debug.Log("Door length " + possibleDoor.Count);
 
+        doors.Remove(possibleDoor[doorSelected]);
         return possibleDoor[doorSelected];
     }
 

@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.00000037252897, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.76292, z: 1.7805}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7047280292276323577}
@@ -191,7 +191,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.05
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -337,7 +337,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.2
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -432,7 +432,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710677, y: -2.842171e-14, z: -2.842171e-14, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 0.0983884, y: 0.18682998, z: 0.18683}
+  m_LocalScale: {x: 0.063603185, y: 0.12077624, z: 0.12077625}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 991712320110017396}

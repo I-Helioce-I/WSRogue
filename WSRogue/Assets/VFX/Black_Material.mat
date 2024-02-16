@@ -49,7 +49,7 @@ Material:
     - _smoothness: 0.53
     - _speed: 0.25
     - _texture_scale: 19.66
-    - _wobble_strengh: 2.61
-    - _wtf: 0.21
+    - _wobble_strengh: 4.25
+    - _wtf: 0.37
     m_Colors: []
   m_BuildTextureStacks: []

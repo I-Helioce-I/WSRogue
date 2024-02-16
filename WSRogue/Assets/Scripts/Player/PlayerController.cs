@@ -86,6 +86,6 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthSlider.value = currentHealth / maxHealth;
+        //healthSlider.value = currentHealth / maxHealth;
     }
 }

@@ -43,13 +43,13 @@ public class CombatSystem : MonoBehaviour
     {
         if (context.performed)
         {
+                    Attack();
 
             switch (currentCombo)
             {
                 case ComboState.First:
                     animator.SetInteger("CurrentCombo", 1);
                     animator.SetTrigger("IsAttacking");
-                    Attack();
                     currentCombo = ComboState.Second;
                     break;
                 case ComboState.Second:

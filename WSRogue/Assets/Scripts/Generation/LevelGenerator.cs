@@ -79,11 +79,11 @@ public class LevelGenerator : MonoBehaviour
         currentInstantiation.transform.position = previousDoor.transform.position;
         currentInstantiation.transform.position -= offset;
 
-        previousInstantiation.RemoveInList(previousDoor);
-        currentInstantiation.RemoveInList(nextDoor);
-        
-        Destroy(previousDoor.gameObject);
-        Destroy(nextDoor.gameObject);
+        //previousInstantiation.RemoveInList(previousDoor);
+        //currentInstantiation.RemoveInList(nextDoor);
+
+        //Destroy(previousDoor.gameObject);
+        //Destroy(nextDoor.gameObject);
     }
 
     private void CreateACorridor()
@@ -92,7 +92,7 @@ public class LevelGenerator : MonoBehaviour
         Door nextDoor;
 
         currentInstantiation = Instantiate(GetRandomCorridor(), transform);
-        
+
         nextDoor = currentInstantiation.GetOppositeDoor(previousDoor.GetActualPosition());
 
         Vector3 offset = nextDoor.transform.localPosition;
@@ -100,11 +100,11 @@ public class LevelGenerator : MonoBehaviour
         currentInstantiation.transform.position = previousDoor.transform.position;
         currentInstantiation.transform.position -= offset;
 
-        previousInstantiation.RemoveInList(previousDoor);
-        currentInstantiation.RemoveInList(nextDoor);
+        //previousInstantiation.RemoveInList(previousDoor);
+        //currentInstantiation.RemoveInList(nextDoor);
 
-        Destroy(previousDoor.gameObject);
-        Destroy(nextDoor.gameObject);
+        //Destroy(previousDoor.gameObject);
+        //Destroy(nextDoor.gameObject);
     }
 
     private Room GetRandomCorridor()

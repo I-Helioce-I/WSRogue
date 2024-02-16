@@ -33,7 +33,6 @@ public class ProjectileMovement : MonoBehaviour
         if (other.gameObject.layer == 3 || other.gameObject.layer == 6)
         {
 
-            Debug.Log(other.name);
             if (other.gameObject.transform.parent.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
                 if (enemy.canTakeShoot)

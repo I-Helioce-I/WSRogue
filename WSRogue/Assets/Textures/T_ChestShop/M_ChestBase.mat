@@ -128,11 +128,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Metallic_strenght: 1
+    - _Metallic_strenght: 0
     - _Normal_Intensity: 1
     - _OcclusionStrength: 1
-    - _Outline_Spread: 1
-    - _Outline_gradient: 1
+    - _Outline_Spread: 0
+    - _Outline_gradient: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0

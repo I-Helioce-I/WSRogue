@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b0a859d66629a640ae6d0a2289ef691
+guid: 5006d1a1cd9b5db4ea9bb7a09d3dd5ec
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -36,8 +36,8 @@ ModelImporter:
       name: A_E_Fight
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 38
+      firstFrame: 38
+      lastFrame: 58
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

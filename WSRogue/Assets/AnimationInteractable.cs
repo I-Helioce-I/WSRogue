@@ -19,6 +19,7 @@ public class AnimationInteractable : MonoBehaviour, IInteractable
     public void Interact(PlayerInteract playerInteract)
     {
         animation.Play("Opening");
+        Destroy(this);
     }
 
 }

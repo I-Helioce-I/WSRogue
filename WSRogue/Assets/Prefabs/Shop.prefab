@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopCamera: {fileID: 9004328480082239160}
   text: 
-  openChest: {fileID: 6866529789630830566}
+  animator: {fileID: 7821627787729797480}
 --- !u!1001 &1312134268356615310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ PrefabInstance:
     - target: {fileID: 1179537160654158585, guid: 063d6455b690c824f93a2284246da443,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8459396
+      value: -2.3459396
       objectReference: {fileID: 0}
     - target: {fileID: 1179537160654158585, guid: 063d6455b690c824f93a2284246da443,
         type: 3}
@@ -137,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 7258620694861063052, guid: 063d6455b690c824f93a2284246da443,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7541276375233802016, guid: 063d6455b690c824f93a2284246da443,
         type: 3}
@@ -336,10 +336,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7821627787729797480}
-    - targetCorrespondingSourceObject: {fileID: 8092446876015071134, guid: 76b41f58cc14c194ebc1757467c642d4,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6866529789630830566}
   m_SourcePrefab: {fileID: 100100000, guid: 76b41f58cc14c194ebc1757467c642d4, type: 3}
 --- !u!4 &327448094564732525 stripped
 Transform:
@@ -361,7 +357,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135053212367754455}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dfd57abd08f8a8f4f8a644636f663c2e, type: 2}
   m_CullingMode: 0
@@ -374,18 +370,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &6866529789630830566
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135053212367754455}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 10f176bfe567b2c43989f9afbc65cda0, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0

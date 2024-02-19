@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsDead", isDead);
             pM.enabled = false;
 
-            mat.material.SetFloat("_Anime", Mathf.Lerp(-1.5f, 1, 3));
+            //mat.material.SetFloat("_Anime", Mathf.Lerp(-1.5f, 1, 3));
 
 
         }

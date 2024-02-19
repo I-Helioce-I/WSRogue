@@ -7,7 +7,8 @@ public class ShopInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] CinemachineVirtualCamera shopCamera;
     bool isOpen = false;
-    [SerializeField] string text;
+    [SerializeField] string text = "Open";
+    [SerializeField] Animator animator;
 
     public string GetInteractText()
     {
@@ -22,6 +23,7 @@ public class ShopInteractable : MonoBehaviour, IInteractable
 
     public void Interact(PlayerInteract playerInteract)
     {
+        animator.SetBool("IsOpen", true);
         if (isOpen)
         {
             CloseShop();

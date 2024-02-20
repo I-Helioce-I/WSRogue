@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerInteractUI : MonoBehaviour
 {
-    [SerializeField] private GameObject containerGameObject;
+    [SerializeField] public GameObject containerGameObject;
     [SerializeField] private PlayerInteract playerInteract;
     [SerializeField] private TextMeshProUGUI interactText;
 

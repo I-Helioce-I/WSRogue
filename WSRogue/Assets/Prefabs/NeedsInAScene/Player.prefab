@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce64abbcdfa82c489e4c7453eeee70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInteractUI: {fileID: 0}
 --- !u!114 &4080279103390494641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +739,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_slash_droite
       objectReference: {fileID: 0}
+    - target: {fileID: 1678176341067486651, guid: b26d262ac172de3478abf1e64b319658,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3993011364106477353, guid: b26d262ac172de3478abf1e64b319658,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -881,6 +887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX_slash_gauche
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042273648891371943, guid: 7e4b3c0f04623244aae45d4150f92908,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

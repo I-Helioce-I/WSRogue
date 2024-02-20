@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField]Animator animator;
+    [SerializeField] Animator doorAnimator;
     public string GetInteractText()
     {
         return "Open";
@@ -18,6 +19,11 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     public void Interact(PlayerInteract playerInteract)
     {
         animator.SetBool("OpenTheDoor", true);
+
+        if(doorAnimator != null)
+        {
+            doorAnimator.SetBool("IsUncover", true);
+        }
         Destroy(this);
     }
 

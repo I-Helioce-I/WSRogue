@@ -72,14 +72,14 @@ Material:
     - _Outline_gradient: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Roughness_Intensity: 1
-    - _Tint_Intensity: 1
+    - _Roughness_Intensity: 1.71
+    - _Tint_Intensity: 2.01
     m_Colors:
     - _Custom_Emmisive: {r: 0, g: 0, b: 0, a: 0}
     - _Flat_Color: {r: 1, g: 0, b: 0, a: 0}
     - _Outline_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Tilling_and_offset: {r: 5, g: 6.9, b: 0, a: 0.1}
-    - _Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint: {r: 0.33775365, g: 0.3473184, b: 0.4339623, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5341199723068112286
 MonoBehaviour:

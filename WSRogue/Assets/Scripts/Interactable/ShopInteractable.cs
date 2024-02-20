@@ -31,6 +31,7 @@ public class ShopInteractable : MonoBehaviour, IInteractable
             playerInteract.GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
             playerInteract.GetComponent<PlayerMovement>().enabled = true;
             playerInteract.playerInteractUI.containerGameObject.SetActive(true);
+            playerInteract.playerInteractUI.enabled = true;
 
         }
         else

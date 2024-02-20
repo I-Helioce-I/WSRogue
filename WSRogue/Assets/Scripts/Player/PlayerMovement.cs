@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dash")]
     [SerializeField] float dashingPower = 20f;
     [SerializeField] float dashingCooldown = 10f;
+    [SerializeField] TrailRenderer trail;
     public float timerDash;
+
     bool canDash;
     bool isDashing;
 
@@ -118,8 +120,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpsRemaining > 0)
         {
-
-
             if (value.performed)
             {
                 if (!isJumping)
@@ -144,10 +144,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (value.performed && canDash)
         {
+            trail.enabled = true;
             animator.Play("Dash");
             rb.AddForce(new Vector3(horizontalMovement, 0) * dashingPower, ForceMode.Impulse);
             timerDash = dashingCooldown;
             canDash = false;
+            trail.enabled = false;
         }
     }
 

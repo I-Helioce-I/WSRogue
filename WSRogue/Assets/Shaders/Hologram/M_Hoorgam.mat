@@ -51,15 +51,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Division01: 47
-    - _Division02: 31.6
+    - _Division01: -20
+    - _Division02: 150
     - _Gradient: 1.68
     - _Opacity: 8.67
     - _Position: -0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed01: -50
-    - _Speed02: 4
+    - _Speed01: -8
+    - _Speed02: 10
     m_Colors:
-    - _Color: {r: 0.83137256, g: 0.78431374, b: 0.23921569, a: 0}
+    - _Color: {r: 0.5023585, g: 0.6552485, b: 0.6698113, a: 0}
   m_BuildTextureStacks: []

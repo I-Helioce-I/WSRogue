@@ -15,6 +15,11 @@ public class OneWayPlatform : MonoBehaviour
     [SerializeField] private LayerMask nullLayer;
     [SerializeField] private LayerMask playerLayer;
 
+    private void Awake()
+    {
+        collision = GetComponent<MeshCollider>();
+    }
+
     public bool IsCheckingPosition
     {
         get => isCheckingCollision;

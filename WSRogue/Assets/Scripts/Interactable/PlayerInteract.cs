@@ -6,6 +6,10 @@ using UnityEngine.XR;
 
 public class PlayerInteract : MonoBehaviour
 {
+
+    public PlayerInteractUI playerInteractUI;
+    
+
     public void InteractInput(InputAction.CallbackContext context)
     {
         if (context.performed)

@@ -25,27 +25,27 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AO:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 36955261ddd21d74d8e3eeda615b383b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColor:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 47fed0bafb7ac2b468ca5721aac8dc14, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emmisive:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d069d2aa2985f7045a987195b67cbd84, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9edd010701dd1704592f91540e5102e7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 08888e9014e70134a89e89571db85814, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e29bb1c40a31acf429186b7c067636eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -65,7 +65,7 @@ Material:
     - _AO_Strenght: 1
     - _CustomColor: 0
     - _Custom_Emmisive_Intensity: 1
-    - _Emmissive: 0
+    - _Emmissive: 1
     - _Metallic_strenght: 1
     - _Normal_Intensity: 1
     - _Outline_Spread: 0

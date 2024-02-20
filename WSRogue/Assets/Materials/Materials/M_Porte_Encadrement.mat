@@ -65,7 +65,7 @@ Material:
     - _AO_Strenght: 1
     - _CustomColor: 0
     - _Custom_Emmisive_Intensity: 1
-    - _Emmissive: 0
+    - _Emmissive: 1
     - _Metallic_strenght: 0.79
     - _Normal_Intensity: 1
     - _Outline_Spread: 0

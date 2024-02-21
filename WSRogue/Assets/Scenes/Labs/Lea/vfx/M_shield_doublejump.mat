@@ -41,6 +41,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
+    - _glow: 9.97
+    - _taille: 0.4
     - _test: -24.76
     m_Colors: []
   m_BuildTextureStacks: []

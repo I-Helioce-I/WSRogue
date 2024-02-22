@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-124456766599667885
+--- !u!114 &-8670455958354071726
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,10 +20,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: trail 1
-  m_Shader: {fileID: -6465566751694194690, guid: 86fc7105eee2fcb4392bf0f1e2fd5e38,
+  m_Name: M_shield_doublejump
+  m_Shader: {fileID: -6465566751694194690, guid: 2eb82fdf41841f44c8713f854b038c20,
     type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 86fc7105eee2fcb4392bf0f1e2fd5e38,
+  m_Parent: {fileID: -876546973899608171, guid: 2eb82fdf41841f44c8713f854b038c20,
     type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,5 +41,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
+    - _glow: 9.97
+    - _taille: 9.4
+    - _test: -23.14
     m_Colors: []
   m_BuildTextureStacks: []

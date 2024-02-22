@@ -8,22 +8,22 @@ public class OneWayPlatform : MonoBehaviour
 {
     [Header("Script de base fait par Thomas GODDARD")]
 
-    private MeshCollider collision;
+    [SerializeField] private MeshCollider collision;
     [SerializeField] public GameObject player;
     private bool isCheckingCollision = true;
 
     [SerializeField] private LayerMask nullLayer;
     [SerializeField] private LayerMask playerLayer;
 
+    private void Awake()
+    {
+        collision = GetComponent<MeshCollider>();
+    }
+
     public bool IsCheckingPosition
     {
         get => isCheckingCollision;
         set => isCheckingCollision = value;
-    }
-    
-    private void Awake()
-    {
-        collision = gameObject.GetComponentInChildren<MeshCollider>();
     }
 
     // Update is called once per frame
@@ -41,11 +41,11 @@ public class OneWayPlatform : MonoBehaviour
 
                 if (playerPosY >= gameObject.transform.position.y)
                 {
-                    EnableCollision();
+                    collision.excludeLayers = playerLayer;
                 }
                 else
                 {
-                    DisableCollision();
+                    collision.excludeLayers = nullLayer;
                 }
             }
 
